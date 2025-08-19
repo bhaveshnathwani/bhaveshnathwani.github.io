@@ -46,27 +46,12 @@
     .btn{display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:12px; border:1px solid var(--card-border); background:var(--bg-soft)}
     .btn.primary{background:linear-gradient(135deg, var(--brand), var(--brand-2)); color:white; border:none; box-shadow: var(--shadow)}
 
-    /* Icon cloud */
-    .icon-cloud{position:relative; height:240px; margin:20px 0;}
-    .logo{position:absolute; opacity:.18; filter:drop-shadow(0 8px 20px rgba(0,0,0,.35)); animation:float 12s ease-in-out infinite alternate; pointer-events:none}
-    .logo img{width:clamp(34px, 6vw, 86px); height:auto}
-    @keyframes float{from{transform:translateY(0)} to{transform:translateY(-8px)}}
-    .l1{top:10%; left:6%; animation-duration:13s}
-    .l2{top:2%; left:22%; animation-duration:11s}
-    .l3{top:16%; left:40%; animation-duration:12s}
-    .l4{top:6%; right:10%; animation-duration:14s}
-    .l5{top:58%; left:10%; animation-duration:10s}
-    .l6{top:62%; left:28%; animation-duration:12s}
-    .l7{top:56%; left:48%; animation-duration:9s}
-    .l8{top:64%; right:14%; animation-duration:13s}
-    .l9{top:28%; left:14%; animation-duration:12s}
-    .l10{top:34%; right:22%; animation-duration:10s}
-    .l11{top:42%; left:68%; animation-duration:9.5s}
-    .l12{top:14%; right:36%; animation-duration:11.5s}
-    .l13{top:22%; right:18%; animation-duration:12.5s} /* Google Cloud */
-    .l14{top:72%; right:28%; animation-duration:11s} /* AWS */
-    @media (max-width: 720px){ .icon-cloud{height:160px} .l3,.l4{display:none} }
-    @media (prefers-reduced-motion: reduce){ .logo{animation:none} }
+    /* Icon marquee */
+    .icon-marquee { overflow:hidden; white-space:nowrap; margin:40px 0; position:relative; }
+    .icon-marquee-track { display:inline-block; padding-left:100%; animation: marquee 30s linear infinite; }
+    .icon-marquee img { height:40px; margin:0 30px; vertical-align:middle; opacity:.85 }
+    @keyframes marquee { 0%{ transform:translateX(0) } 100%{ transform:translateX(-100%) } }
+    @media (max-width:720px){ .icon-marquee img { height:28px; margin:0 18px } }
   </style>
 </head>
 <body>
@@ -102,22 +87,24 @@
       </ul>
     </section>
 
-    <!-- Official icons cloud -->
-    <div class="icon-cloud" aria-hidden="true">
-      <div class="logo l1"><img src="icons/postgresql.svg" alt="PostgreSQL"></div>
-      <div class="logo l2"><img src="icons/bigquery.svg" alt="BigQuery"></div>
-      <div class="logo l3"><img src="icons/redshift.svg" alt="Redshift"></div>
-      <div class="logo l4"><img src="icons/python.svg" alt="Python"></div>
-      <div class="logo l5"><img src="icons/n8n.svg" alt="n8n"></div>
-      <div class="logo l6"><img src="icons/powerautomate.svg" alt="Power Automate"></div>
-      <div class="logo l7"><img src="icons/googlesheets.svg" alt="Google Sheets"></div>
-      <div class="logo l8"><img src="icons/excel.svg" alt="Excel"></div>
-      <div class="logo l9"><img src="icons/sql.svg" alt="SQL"></div>
-      <div class="logo l10"><img src="icons/automation.svg" alt="Automation"></div>
-      <div class="logo l11"><img src="icons/apps-script.svg" alt="Google Apps Script"></div>
-      <div class="logo l12"><img src="icons/metabase.svg" alt="Metabase"></div>
-      <div class="logo l13"><img src="icons/googlecloud.svg" alt="Google Cloud"></div>
-      <div class="logo l14"><img src="icons/aws.svg" alt="AWS"></div>
+    <!-- Official icons marquee -->
+    <div class="icon-marquee" aria-hidden="true">
+      <div class="icon-marquee-track">
+        <img src="icons/postgresql.svg" alt="PostgreSQL">
+        <img src="icons/bigquery.svg" alt="BigQuery">
+        <img src="icons/redshift.svg" alt="Redshift">
+        <img src="icons/python.svg" alt="Python">
+        <img src="icons/n8n.svg" alt="n8n">
+        <img src="icons/powerautomate.svg" alt="Power Automate">
+        <img src="icons/googlesheets.svg" alt="Google Sheets">
+        <img src="icons/excel.svg" alt="Excel">
+        <img src="icons/sql.svg" alt="SQL">
+        <img src="icons/automation.svg" alt="Automation">
+        <img src="icons/apps-script.svg" alt="Google Apps Script">
+        <img src="icons/metabase.svg" alt="Metabase">
+        <img src="icons/googlecloud.svg" alt="Google Cloud">
+        <img src="icons/aws.svg" alt="AWS">
+      </div>
     </div>
 
     <section id="projects" class="section">
